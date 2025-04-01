@@ -1,7 +1,12 @@
 const button = document.getElementById("search-button");
 const cityInput = document.getElementById("city-input");
 
+// The API key is not included here for security reasons, since this is a public repository.
+// If you want to test the app, please replace the apiKey variable with your own key.
+
+// const apiKey = "Put your apiKey here" 
 const weatherInfo = document.querySelector(".weather-info");
+
 
 function getWeather(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
