@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5f6f6;
+    color: #212121;
+    text-align: center;
+  }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  
+}
+
+.search-container{
+    gap: 10px;
+    display: flex;
+}
+
+#city-input {
+   width: 120px;
+   border-radius: 7px;
+   padding: 4px;
+   text-align: center;
+}
+
+#search-button {
+    border-radius: 7px;
+    padding: 4px 6px;
+    background-color: #78c7c750;
+}
+
+#search-button:hover {
+    background-color: #55a2a269;
+}
+
+.error-msg {
+    color: #d81515f0;
+}
