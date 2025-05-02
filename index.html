@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weather-app</title>
+    <title>Weather app</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class = "container"> 
-    <h1>Weather app</h1>
+<main class="container">
+    <header>
+        <h1>Weather app</h1>
+    </header>
 
-    <div class = "search-container">
-        <input type="text" id="city-input" placeholder="Enter a city">
-        <button id="search-button">Search</button>
-    </div>
 
-<div class="weather-info">
+<section class="search-container" aria-label="Search for a city's weather">
+    <form id="search-form">
+        <input type="text" id="city-input" name="city" placeholder="Enter a city" required aria-label="Name of a city">
+        <button type="submit" id="search-button">Search</button>
+    </form>
+</section>
+
+<section class="weather-info">
     
-</div>
-</div>
+</section>
+</main>
 
     <script src="script.js"></script>
 </body>
