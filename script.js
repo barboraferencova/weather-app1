@@ -1,10 +1,10 @@
-const button = document.getElementById("search-button");
+const form = document.getElementById("search-form");
 const cityInput = document.getElementById("city-input");
 
 // The API key is not included here for security reasons, since this is a public repository.
 // If you want to test the app, please replace the apiKey variable with your own key.
 
-// const apiKey = "Put your apiKey here" 
+// const apiKey = "Add your API Key here"; 
 const weatherInfo = document.querySelector(".weather-info");
 
 
@@ -23,12 +23,15 @@ function getWeather(city) {
       const cityName = data.name;
       const temp = data.main.temp;
       const description = data.weather[0].description;
-
+      const iconCode = data.weather[0].icon;
+      const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+      
       weatherInfo.innerHTML = 
       `
       <h2> Weather in: ${cityName}</h2>
-      <p> Temperature: ${temp} </p>
-      <p> ${description}</p>
+      <img src="${iconUrl}" alt="${description}" class="weather-icon">
+      <p> <strong>Temperature:</strong> ${temp} °C </p>
+      <p><strong>Conditions: <strong> ${description}</p>
       `
     })
     .catch(error => {
@@ -37,7 +40,9 @@ function getWeather(city) {
     });
 }
 
-button.addEventListener("click", function () {
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
   const city = cityInput.value.trim(); 
   if (city) {
     getWeather(city);
